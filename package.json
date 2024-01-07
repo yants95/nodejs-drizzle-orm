@@ -1,0 +1,20 @@
+{
+  "name": "nodejs-drizzle-orm",
+  "author": "Yan Soares",
+  "version": "1.0.0",
+  "scripts": {
+    "db:generate": "drizzle-kit generate:pg --config=./src/db/drizzle.config.ts",
+    "db:push": "drizzle-kit push:pg --config=./src/db/drizzle.config.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.6",
+    "@types/pg": "^8.10.9",
+    "drizzle-kit": "^0.20.10",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1",
+    "drizzle-orm": "^0.29.3",
+    "pg": "^8.11.3"
+  }
+}

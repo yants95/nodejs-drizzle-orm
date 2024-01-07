@@ -1,0 +1,18 @@
+import { randomUUID } from "node:crypto";
+
+import { drizzleDb } from "../drizzle-setup"
+import { UserSchema } from "../schemas/user-schema"
+
+export class UserRepository {
+  constructor() {}
+
+  async save(userProps: any): Promise<any> {
+    const user = userProps.getPropsCopy();
+
+    await drizzleDb.insert(UserSchema).values({
+      id: randomUUID(),
+      name: user.name,
+      email: user.email,
+    });
+  }
+}
